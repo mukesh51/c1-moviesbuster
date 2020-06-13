@@ -1,5 +1,5 @@
-This application has a dependency on another node project(node-api-server), which serves as a middleware.
-It provides REST API's for consuming movie related information. This react application assumes the node-api-server is running on port 5000. For now, this is hardcoded in application, but can be easily externalized to use the node-api-server as a service.
+This React application has a dependency on another node project(node-api-server), which serves as a middleware.
+It provides REST API's for consuming movie related information. This react application assumes the node-api-server is running on port 5000. This node middleware could have been anything like Spring-Boot-Application or any other micro-service. It could even be a AWS Lambda call (serverless). For brevity, the node application uses data in memory, rather than making further database call. Although it gives a complete end-to-end view of the architecture.
 
 ## Pre-requisite
 
