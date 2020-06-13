@@ -3,11 +3,11 @@ It provides REST API's for consuming movie related information. This react appli
 
 ## Pre-requisite
 
-To Run this React application, ensure you follow the instruction provided in ReadMe file of node-api-server project. The only constraint for this react application (as of now), is node-api-server should run on port 5000.
+To Run this React application, ensure you follow the instruction provided in ReadMe file of node-api-server project, which can be found [here](https://github.com/mukesh51/c1-node-api-server). The only constraint for this react application (as of now), is node-api-server should run on port 5000.
 
-### To run this application, ensure you clone this repository, move to that directoy and run `npm install` command.
+To run this application, ensure you clone this repository, move to that directoy and run `npm install` command.
 
-### Next run the following command `npm start` to start your react application.
+Next run the following command `npm start` to start your react application.
 
 The flow of the application goes as follows:
 
@@ -17,6 +17,9 @@ The flow of the application goes as follows:
 4. Once the prmoise is fullfilled, react application updates it's state and which triggers a re-render of the component.
 5. Node-APi-Server application provides all the REST interfaces for CRUD operation. The react application for now, only show-cases Get and Delete endpoints. Other end-points can be accessed via POST-Man client for now.
 
-### Home page of React App. The movies are rendered by making a rest call to node-api-server application
+#### Home page of React App. 
+The movies are rendered by making a rest call to node-api-server application
 
 ![Home Page](https://github.com/mukesh51/c1-moviesbuster/blob/master/images/home-page.png)
+
+### Screenshot of Accessing REST Endpoint can be found [here](https://github.com/mukesh51/c1-node-api-server/blob/master/README.md)
