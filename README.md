@@ -1,68 +1,22 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This application has a dependency on another node project(node-api-server), which serves as a middleware.
+It provides REST API's for consuming movie related information. This react application assumes the node-api-server is running on port 5000. For now, this is hardcoded in application, but can be easily externalized to use the node-api-server as a service.
 
-## Available Scripts
+## Pre-requisite
 
-In the project directory, you can run:
+To Run this React application, ensure you follow the instruction provided in ReadMe file of node-api-server project. The only constraint for this react application (as of now), is node-api-server should run on port 5000.
 
-### `npm start`
+### To run this application, ensure you clone this repository, move to that directoy and run `npm install` command.
 
-Runs the app in the development mode.<br />
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+### Next run the following command `npm start` to start your react application.
 
-The page will reload if you make edits.<br />
-You will also see any lint errors in the console.
+The flow of the application goes as follows:
 
-### `npm test`
+1. React Application starts up and tries to render the default component (in this case Movies component).
+2. Movies Component in it's lifecycle method makes an asynchronous call (using axios) to REST endpoint provided by node-api-server application.
+3. The above call returns a promise, which eventually gets resolved, as long as the node-api-server is up and running on port 5000. This port should ideally be set as an environment variable. Something to work on.
+4. Once the prmoise is fullfilled, react application updates it's state and which triggers a re-render of the component.
+5. Node-APi-Server application provides all the REST interfaces for CRUD operation. The react application for now, only show-cases Get and Delete endpoints. Other end-points can be accessed via POST-Man client for now.
 
-Launches the test runner in the interactive watch mode.<br />
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+### Home page of React App. The movies are rendered by making a rest call to node-api-server application
 
-### `npm run build`
-
-Builds the app for production to the `build` folder.<br />
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.<br />
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
-
-### Analyzing the Bundle Size
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
-
-### Making a Progressive Web App
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
-
-### Advanced Configuration
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
-
-### Deployment
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
-
-### `npm run build` fails to minify
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
+![Home Page](https://github.com/mukesh51/c1-moviesbuster/blob/master/images/home-page.png)
